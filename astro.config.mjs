@@ -1,9 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import remarkMath from 'remark-math';
+import rehypeMathjax from 'rehype-mathjax';
 
 // https://astro.build/config
 export default defineConfig({
+	markdown: {
+		remarkPlugins: [remarkMath],
+		rehypePlugins: [rehypeMathjax],
+	},
 	integrations: [
 		starlight({
 			title: 'Sistemas Físicos Interactivos 1',
@@ -46,5 +52,5 @@ export default defineConfig({
 		}),
 	],
 	site: 'https://jfUPB.github.io',
-	base: 'interactivos1-2025-10-interactivos1-template2025-10',
+	base: 'interactivos1-juanferfrancoudea',
 });
